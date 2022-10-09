@@ -7,7 +7,7 @@
 - Parar servidor mysql:
     sudo service mysql sttop
 
-- Ejecutar XAMPP
+- Ejecutar XAMPP (sólo necesitamos el Servidor de BBDD)
 
 
 composer create-project laravel/laravel <proyecto>.
@@ -34,6 +34,7 @@ php artisan make:migration add_username_to_users_table.
 
 Instalar: LiveWire (NO EN ESTE PROYECTO):
 composer require livewire/livewire
+(En app.blade.php incluir en el HEAD y en el BODY los correspondientes @)
 
 
 ## Dudas y Posibles errores.

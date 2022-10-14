@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Vacante;
 use Illuminate\Http\Request;
 
 class VacanteController extends Controller
@@ -54,9 +55,16 @@ class VacanteController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Vacante $vacante)
     {
-        //
+        // Solo permitimos que lo edite el mismo usuario que la creó,
+        // mediente los "policy" creados mendiente la orden:
+        // php artisan make:policy VacantePolicy --model=Vacante
+        $this->authorize('update', $vacante);
+
+        return view('vacantes.edit', [
+            'vacante' => $vacante
+        ]);
     }
 
     /**

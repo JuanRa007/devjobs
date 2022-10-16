@@ -45,4 +45,10 @@ class Vacante extends Model
     {
         return $this->hasMany(Candidato::class);
     }
+
+    public function reclutador()
+    {
+        // Me salgo de las "reglas" de Laravel.
+        return $this->belongsTo(User::class, 'user_id');
+    }
 }

@@ -45,6 +45,13 @@ php artisan route:cache
 En producción, la carga de imágenes no funcionaba y hubo que instalar:
 composer require ext-gd
 
+Crear Notificaciones:
+php artisan make:notification NuevoCandidato
+más la tabla donde se volcará esa información:
+php artisan notifications:table
+
+
+
 IMPORTANTE:
 Las imagenes se guardan en una ubicación a la que no tiene acceso el usuario, por lo que
 hay que crear un enlace a la carpeta "storage/public/vacantes", mediante el comando:

@@ -18,7 +18,8 @@ class VacantePolicy
      */
     public function viewAny(User $user)
     {
-        //
+        // Comprobamos que su ROL es el correcto para ver la vacante.
+        return $user->rol === 2;
     }
 
     /**
@@ -41,7 +42,8 @@ class VacantePolicy
      */
     public function create(User $user)
     {
-        //
+        // Comprobamos que su ROL es el correcto para ver la vacante.
+        return $user->rol === 2;
     }
 
     /**

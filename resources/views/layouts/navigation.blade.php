@@ -12,6 +12,7 @@
 
                 <!-- Navigation Links -->
                 @auth
+                @can('create', App\Models\Vacante::class)
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link :href="route('vacantes.index')" :active="request()->routeIs('vacantes.index')">
                         {{ __('Mis Vacantes') }}
@@ -20,18 +21,19 @@
                         {{ __('Crear Vacante') }}
                     </x-nav-link>
                 </div>
+                @endcan
                 @endauth
             </div>
 
             <!-- Settings Dropdown -->
             <div class="hidden sm:flex sm:items-center sm:ml-6">
                 @auth
-                @if (auth()->user()->rol === 2)
+                @can('create', App\Models\Vacante::class)
                 <a class="mr-2 w-7 h-7 bg-indigo-600 hover:bg-indigo-800 rounded-full flex flex-col justify-center items-center text-sm font-extrabold text-white"
                     href="{{ route('notificaciones') }}">
                     {{ auth()->user()->unreadNotifications->count() }}
                 </a>
-                @endif
+                @endcan
 
                 <x-dropdown align="right" width="48">
                     <x-slot name="trigger">

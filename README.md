@@ -50,6 +50,8 @@ php artisan make:notification NuevoCandidato
 más la tabla donde se volcará esa información:
 php artisan notifications:table
 
+Crear Pantalla Inicial:
+php artisan make:controller HomeController --invokable
 
 
 IMPORTANTE:
